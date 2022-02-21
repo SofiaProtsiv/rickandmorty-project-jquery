@@ -19,8 +19,17 @@ a {
 p {
   margin: 0;
 }
-.loadMoreBtn {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.loadMoreEpisodes {
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #fff;
+  background-image: linear-gradient(to bottom, #00ff37, #0f0e2c);
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
 }

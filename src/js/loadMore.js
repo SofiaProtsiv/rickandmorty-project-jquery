@@ -1,47 +1,44 @@
 // import renderEpisodesCards from './renderEpisodesCards';
 // import renderCharactersCards from './renderCharactersCards';
-// import renderLocationsCards from './renderLocationsCards';
+
 // let page = 1;
 // let totalPages = 0;
 
-// export default function loadMore(ID, totalPages) {
-//   const loadMoreBtn = $('.loadMoreBtn').removeClass().addClass(`loadMoreBtn ${ID}`);
+// export default function loadMore(ID) {
 //   totalPages = totalPages;
-
-//   loadMoreBtn.click(function () {
-//     page = page + 1;
-//     $.ajax({
-//       url: `https://rickandmortyapi.com/api/${ID}/?page=${page}`,
-//       crossDomain: true,
-//       type: 'GET',
-//       dataType: 'json',
-//     }).done(function (data) {
-//       switch (ID) {
-//         case 'home':
-//           return;
-//         case 'episode':
+//   switch (ID) {
+//     case 'episode':
+//       $('.loadMoreEpisodes').click(function () {
+//         page = page + 1;
+//         $.ajax({
+//           url: `https://rickandmortyapi.com/api/${ID}?page=${page}`,
+//           crossDomain: true,
+//           type: 'GET',
+//           dataType: 'json',
+//         }).done(function (data) {
+//           totalPages = data.info.pages;
 //           renderEpisodesCards(data.results);
-//           hideLoadMoreBtn();
-//           break;
-//         case 'character':
+//           if (totalPages === page) {
+//             $('.loadMoreEpisodes').hide();
+//           }
+//         });
+//       });
+//       break;
+
+//     case 'character':
+//       $('.loadMoreCharacter').click(function () {
+//         page = page + 1;
+//         $.ajax({
+//           url: `https://rickandmortyapi.com/api/${ID}/?page=${page}`,
+//           crossDomain: true,
+//           type: 'GET',
+//           dataType: 'json',
+//         }).done(function (data) {
 //           renderCharactersCards(data.results);
-//           hideLoadMoreBtn();
-//           break;
-//         default:
-//           return;
-//       }
-//     });
-//   });
-// }
-// function hideLoadMoreBtn() {
-//   if (totalPages === page) {
-//     $('.loadMoreBtn').hide();
+//           if (totalPages === page) {
+//             $('.loadMoreCharacter').hide();
+//           }
+//         });
+//       });
 //   }
 // }
-loadMoreCharacter;
-
-loadMoreEpisodes;
-
-import renderEpisodesCards from './renderEpisodesCards';
-import renderCharactersCards from './renderCharactersCards';
-import renderLocationsCards from './renderLocationsCards';

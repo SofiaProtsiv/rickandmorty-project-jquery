@@ -22,13 +22,19 @@ $('.nav-btn').click(function (event) {
       totalPages = data.info.pages;
 
       if (get_ID === 'episode') {
-        $('.content-list').empty();
+        refresh();
         renderEpisodesCards(data.results);
       }
       if (get_ID === 'character') {
-        $('.content-list').empty();
+        refresh();
         renderCharactersCards(data.results);
       }
     });
   }
 });
+
+function refresh() {
+  $('.content-list').empty();
+  $('.loadMoreCharacter').remove();
+  $('.loadMoreEpisodes').remove();
+}

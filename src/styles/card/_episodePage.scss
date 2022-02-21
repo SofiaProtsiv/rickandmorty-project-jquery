@@ -1,0 +1,23 @@
+.episode-page-character img {
+  width: 100px;
+  margin: 5px;
+  //   flex: 2 1 0%;
+}
+.episode-page-info {
+  width: 100%;
+  text-align: center;
+}
+.episode-page-info .title {
+  margin: 10px 0;
+  font-size: 40px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to bottom, rgb(0, 255, 55), rgb(0, 23, 97));
+}
+.episode-page-info .status {
+  font-size: 16px;
+  font-weight: 600;
+}
