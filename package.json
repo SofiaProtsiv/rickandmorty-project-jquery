@@ -1,0 +1,53 @@
+
+   
+{
+  "name": "rickandmorty-project-jquery",
+  "version": "1.1.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://SofiaProtsiv.github.io/rickandmorty-project-jquery",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /rickandmorty-project-jquery/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SofiaProtsiv/rickandmorty-project-jquery.git"
+  },
+  "keywords": [],
+  "author": "SofiaProtsiv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SofiaProtsiv/rickandmorty-project-jquery/issues"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-handlebars-precompile": "^1.0.2",
+    "parcel-plugin-nuke-dist": "^1.0.1",
+    "posthtml-include": "^1.6.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "@pipedream/platform": "^0.10.0",
+    "@pipedreamhq/platform": "^0.8.1",
+    "ajax": "^0.0.4",
+    "axios": "^0.26.0",
+    "handlebars": "^4.7.7"
+  },
+  "configurations": [
+      {
+          "name": "Launch Chrome against localhost",
+          "type": "chrome",
+          "request": "launch",
+          "url": "http://localhost:4200",
+          "webRoot": "${workspaceRoot}"
+      },
+      {
+          "name": "Attach to Chrome",
+          "type": "chrome",
+          "request": "attach",
+          "port": 4200,
+          "webRoot": "${workspaceRoot}"
+      }
+  ]
+}
