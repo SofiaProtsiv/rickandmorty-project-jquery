@@ -1,0 +1,26 @@
+.episode {
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-right: 20px;
+  font-size: 30px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: linear-gradient(to bottom, rgb(0, 255, 55), rgb(0, 23, 97));
+}
+.title {
+  font-weight: 700;
+  font-size: 30px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+p {
+  margin: 0;
+}
+.loadMoreBtn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

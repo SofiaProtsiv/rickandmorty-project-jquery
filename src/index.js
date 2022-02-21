@@ -1,10 +1,11 @@
 import renderEpisodesCards from './js/renderEpisodesCards';
 import renderCharactersCards from './js/renderCharactersCards';
-import renderLocationsCards from './js/renderLocationsCards';
 import './styles/main.scss';
 
 $('.nav-btn').click(function (event) {
+  $('this.id').addClass('active');
   const get_ID = this.id;
+  let currentPage = 1;
   let totalPages = 0;
 
   $('.loadMoreBtn').removeClass().addClass(`loadMoreBtn ${get_ID}`);
@@ -13,7 +14,7 @@ $('.nav-btn').click(function (event) {
     return;
   } else {
     $.ajax({
-      url: `https://rickandmortyapi.com/api/${get_ID}`,
+      url: `https://rickandmortyapi.com/api/${get_ID}?page=${currentPage}`,
       crossDomain: true,
       type: 'GET',
       dataType: 'json',

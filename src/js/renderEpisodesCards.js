@@ -1,4 +1,4 @@
-let page = 0;
+let page = 1;
 let totalPages = 0;
 
 export default function renderEpisodesCards(episodes) {
@@ -22,7 +22,7 @@ export default function renderEpisodesCards(episodes) {
 
     page = page + 1;
     $.ajax({
-      url: `https://rickandmortyapi.com/api/episode/?page=${page}`,
+      url: `https://rickandmortyapi.com/api/episode?page=${page}`,
       crossDomain: true,
       type: 'GET',
       dataType: 'json',
@@ -30,6 +30,7 @@ export default function renderEpisodesCards(episodes) {
       totalPages = data.info.pages;
       renderEpisodesCards(data.results);
       if (totalPages === page) {
+        page = 1;
         $('.loadMoreEpisodes').hide();
       }
     });

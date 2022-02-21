@@ -1,0 +1,43 @@
+header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid rgba(46, 41, 51, 0.08);
+  margin: 0px auto;
+  width: 100%;
+  min-height: 60px;
+  z-index: 2;
+  background-color: white;
+}
+.nav-logo {
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(https://www.freepnglogos.com/uploads/rick-and-morty-png/rick-and-morty-portal-shoes-white-clothing-zavvi-23.png);
+}
+.main-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0px auto;
+  width: 100%;
+  min-height: 60px;
+}
+
+.nav-btn {
+  padding: 0;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+  font-weight: 700px;
+  &:hover {
+    color: orange;
+  }
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+  &.active {
+    color: orange;
+  }
+}
