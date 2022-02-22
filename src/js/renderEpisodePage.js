@@ -1,3 +1,5 @@
+import onOpenModal from './modal';
+
 export default function renderEpisodePage() {
   $('.episodes').click(function () {
     $('.loadMoreEpisodes').remove();
@@ -10,10 +12,11 @@ export default function renderEpisodePage() {
     }).done(function (data) {
       const episodesMarkup = renderEpisodeMarkup(data);
       const charactersMarkup = charactersCardsMarkup(data.characters);
-
+      const modal = onOpenModal();
       $('.content-list').empty();
       $('.content-list').append(episodesMarkup);
       $('.content-list').append('<ul class=listOfCharacters>').append(charactersMarkup);
+      $('.content-list').append(onOpenModal);
     });
   });
 }
@@ -40,6 +43,8 @@ function charactersCardsMarkup(characters) {
             <img src='https://rickandmortyapi.com/api/character/avatar/${data.id}.jpeg'/>
         `);
       $('.listOfCharacters').append(content);
+
+      onOpenModal();
     });
   });
 }
