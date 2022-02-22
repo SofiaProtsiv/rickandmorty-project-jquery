@@ -2,7 +2,6 @@ let page = 1;
 let totalPages = 0;
 
 export default function renderCharactersCards(character) {
-  console.log(character);
   $.each(character, function (key, value) {
     const content = $(`<li id=${value.id} class='content-character'>`);
 
@@ -31,7 +30,7 @@ export default function renderCharactersCards(character) {
 
   $('.loadMoreCharacter').click(function () {
     if (totalPages === page) {
-      $('.loadMoreCharacter').hide();
+      $('.loadMoreCharacter').remove();
       page = 1;
       return;
     } else {

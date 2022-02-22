@@ -1,13 +1,22 @@
-.episode-page-character img {
-  width: 100px;
-  margin: 5px;
-  //   flex: 2 1 0%;
+.listOfCharacters,
+.listOfEpisode {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
 }
-.episode-page-info {
+.listOfEpisode {
+  flex-direction: column;
+  padding-bottom: 20px;
+}
+.episode-page-character-item img {
+  width: 100px;
+  margin: 3px;
+}
+.episode-title {
   width: 100%;
   text-align: center;
-}
-.episode-page-info .title {
   margin: 10px 0;
   font-size: 40px;
   font-weight: 900;
@@ -17,7 +26,9 @@
   background-clip: text;
   background-image: linear-gradient(to bottom, rgb(0, 255, 55), rgb(0, 23, 97));
 }
-.episode-page-info .status {
-  font-size: 16px;
-  font-weight: 600;
+.episode-info {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 900;
+  color: rgb(32, 35, 41);
 }

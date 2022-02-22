@@ -1,8 +1,6 @@
-import renderCharactersCards from './renderCharactersCards';
-
 export default function renderEpisodePage() {
   $('.episodes').click(function () {
-    $('.loadMoreEpisodes').hide();
+    $('.loadMoreEpisodes').remove();
 
     $.ajax({
       url: `https://rickandmortyapi.com/api/episode/${this.id}`,
@@ -10,19 +8,24 @@ export default function renderEpisodePage() {
       type: 'GET',
       dataType: 'json',
     }).done(function (data) {
-      const markup = renderEpisodeMarkup(data);
-      charactersCardsMarkup(data.characters);
+      const episodesMarkup = renderEpisodeMarkup(data);
+      const charactersMarkup = charactersCardsMarkup(data.characters);
+
       $('.content-list').empty();
-      $('.content-list').append(markup);
+      $('.content-list').append(episodesMarkup);
+      $('.content-list').append('<ul class=listOfCharacters>').append(charactersMarkup);
     });
   });
 }
 
 function renderEpisodeMarkup(data) {
   return `
-    <li class="episode-page-info">        
-          <h3 class="title">${data.name}</h3> 
-  </li>`;
+  <ul class=listOfEpisode>
+    <h3 class="episode-title">${data.name}</h3>
+    <p class="episode-info">Episode: ${data.episode}</p>
+    <p class="episode-info">Release date: ${data.air_date}</p>
+  </ul>
+  `;
 }
 function charactersCardsMarkup(characters) {
   characters.forEach(character => {
@@ -32,11 +35,11 @@ function charactersCardsMarkup(characters) {
       type: 'GET',
       dataType: 'json',
     }).done(function (data) {
-      const content = $(`<li id=${data.id} class='episode-page-character'>`);
+      const content = $(`<li id=${data.id} class='episode-page-character-item'>`);
       content.append(`
             <img src='https://rickandmortyapi.com/api/character/avatar/${data.id}.jpeg'/>
         `);
-      $('.content-list').append(content);
+      $('.listOfCharacters').append(content);
     });
   });
 }
