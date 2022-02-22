@@ -15,4 +15,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./renderEpisodesCards":"lhhI","./renderCharactersCards":"rBUo"}],"Focm":[function(require,module,exports) {
 "use strict";require("./styles/main.scss"),require("./js/mainLogic");
 },{"./styles/main.scss":"LDUH","./js/mainLogic":"FCqC"}]},{},["Focm"], null)
-//# sourceMappingURL=/rickandmorty-project-jquery/src.f87faddd.js.map
+//# sourceMappingURL=/rickandmorty-project-jquery/src.f8250be9.js.map
