@@ -1,7 +1,6 @@
 .content-section {
   width: 320px;
   margin: 0 auto;
-  padding: 50px 0;
 
   @media screen and (min-width: 768px) {
     width: 768px;
@@ -15,7 +14,6 @@
 }
 
 .content-list {
-  padding: 30px 0;
   list-style: none;
   @media screen and (min-width: 768px) {
     display: flex;

@@ -1,5 +1,3 @@
-
-   
 {
   "name": "rickandmorty-project-jquery",
   "version": "1.1.0",
@@ -32,22 +30,23 @@
     "@pipedreamhq/platform": "^0.8.1",
     "ajax": "^0.0.4",
     "axios": "^0.26.0",
-    "handlebars": "^4.7.7"
+    "handlebars": "^4.7.7",
+    "ui-preloader": "^1.0.0"
   },
   "configurations": [
-      {
-          "name": "Launch Chrome against localhost",
-          "type": "chrome",
-          "request": "launch",
-          "url": "http://localhost:4200",
-          "webRoot": "${workspaceRoot}"
-      },
-      {
-          "name": "Attach to Chrome",
-          "type": "chrome",
-          "request": "attach",
-          "port": 4200,
-          "webRoot": "${workspaceRoot}"
-      }
+    {
+      "name": "Launch Chrome against localhost",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200",
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "name": "Attach to Chrome",
+      "type": "chrome",
+      "request": "attach",
+      "port": 4200,
+      "webRoot": "${workspaceRoot}"
+    }
   ]
 }

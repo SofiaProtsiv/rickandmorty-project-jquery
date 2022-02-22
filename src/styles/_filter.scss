@@ -1,0 +1,41 @@
+.filter__section {
+  @media screen and (min-width: 1400px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px 0;
+  list-style: none;
+  @media screen and (min-width: 768px) {
+    z-index: 1;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+  @media screen and (min-width: 1400px) {
+    margin: 0;
+  }
+}
+
+.filter-input__option {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+  margin-right: 15px;
+  font-weight: 800;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+  &:hover,
+  &.active {
+    cursor: pointer;
+    color: black;
+    background-color: #00ff15dc;
+  }
+}

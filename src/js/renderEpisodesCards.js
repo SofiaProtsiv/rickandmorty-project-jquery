@@ -1,5 +1,5 @@
 import renderEpisodePage from './renderEpisodePage';
-
+import onFilter from './filter';
 let page = 1;
 let totalPages = 0;
 
@@ -12,6 +12,11 @@ export default function renderEpisodesCards(episodes) {
         ${value.name}
         </p>
     `);
+
+    if ($('.filter__section').length < 1) {
+      const filterMarkup = onFilter();
+      $('.content-section').prepend(filterMarkup);
+    }
     $('.content-list').append(content);
   });
 

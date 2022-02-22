@@ -18,7 +18,6 @@ export default function renderCharactersCards(character) {
           </p>
         </div>
     `);
-
     $('.content-list').append(content);
   });
 

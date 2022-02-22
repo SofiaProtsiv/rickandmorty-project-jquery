@@ -7,11 +7,12 @@ $('.nav-btn').click(function (event) {
   let currentPage = 1;
   let totalPages = 0;
 
-  onCurrentPage();
+  onCurrentPage(get_ID);
 
   $('.loadMoreBtn').removeClass().addClass(`loadMoreBtn ${get_ID}`);
   if (get_ID === 'home') {
     addBackgroundImg();
+    $('.filter__section').remove();
     refresh();
     return;
   } else {
@@ -31,6 +32,7 @@ $('.nav-btn').click(function (event) {
       }
       if (get_ID === 'character') {
         refresh();
+        $('.filter__section').remove();
         renderCharactersCards(data.results);
       }
     });
@@ -41,25 +43,22 @@ function refresh() {
   $('.content-list').empty();
   $('.loadMoreCharacter').remove();
   $('.loadMoreEpisodes').remove();
+  $('.filter-section').remove();
 }
 function addBackgroundImg() {
   $('body').css({
     'background-image':
       'url(https://www.pngall.com/wp-content/uploads/4/Rick-And-Morty-PNG-Images.png)',
     'background-repeat': 'no-repeat',
-    height: '100vh',
+    height: '97vh',
     'background-position': 'center',
     'background-position-y': '100%',
   });
 }
-function onCurrentPage() {
-  $('.nav-btn').click(function (event) {
-    const get_ID = this.id;
-
-    $(`#${get_ID}`).addClass(`active`);
-    if ($(`#${get_ID}`).hasClass(`active`)) {
-      $('.nav-btn').removeClass('active');
-      $(`#${get_ID}`).addClass(`active`);
-    }
-  });
+function onCurrentPage(id) {
+  $(`#${id}`).addClass(`active`);
+  if ($(`#${id}`).hasClass(`active`)) {
+    $('.nav-btn').removeClass('active');
+    $(`#${id}`).addClass(`active`);
+  }
 }
