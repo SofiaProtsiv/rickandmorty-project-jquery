@@ -26,11 +26,9 @@ export default function renderCharactersCards(character) {
       '<button class="loadMoreCharacter" type="button">Load more</button>',
     );
   }
-
   $('.loadMoreCharacter').click(function () {
     if (totalPages === page) {
       $('.loadMoreCharacter').remove();
-      page = 1;
       return;
     } else {
       page = page + 1;

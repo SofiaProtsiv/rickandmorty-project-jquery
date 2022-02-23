@@ -2,9 +2,8 @@ import renderEpisodesCards from './renderEpisodesCards';
 import renderCharactersCards from './renderCharactersCards';
 
 addBackgroundImg();
-$('.nav-btn').click(function (event) {
+$('.nav-btn').click(function () {
   const get_ID = this.id;
-  let currentPage = 1;
   let totalPages = 0;
 
   onCurrentPage(get_ID);
@@ -19,7 +18,7 @@ $('.nav-btn').click(function (event) {
     $('body').css({ 'background-image': 'none' });
 
     $.ajax({
-      url: `https://rickandmortyapi.com/api/${get_ID}?page=${currentPage}`,
+      url: `https://rickandmortyapi.com/api/${get_ID}?page=1`,
       crossDomain: true,
       type: 'GET',
       dataType: 'json',

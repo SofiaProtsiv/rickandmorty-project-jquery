@@ -27,8 +27,7 @@ export default function renderEpisodesCards(episodes) {
   }
   $('.loadMoreEpisodes').click(function () {
     if (totalPages === page) {
-      $('.loadMoreEpisodes').hide();
-      page = 1;
+      $('.loadMoreEpisodes').remove();
       return;
     } else {
       page = page + 1;
